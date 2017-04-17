@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Новости</title>
+</head>
+<body>
+
+<div id="app-container">
+    <div id="main-region"><p>Загрузка приложения..</p></div>
+</div>
+
+<script type="text/template" id="news-list-layout">
+    <div id="panel-region"></div>
+    <div id="newss-region"></div>
+    <div id="pages-region"></div>
+</script>
+
+<script type="text/template" id="next-page-tmpl">
+    <button class="js-prev">< Prev</button>&nbsp;
+    <button class="js-next">Next ></button>
+</script>
+
+<script type="text/template" id="news-list-panel">
+    <button class="js-new">Добавить новость</button>
+</script>
+
+<script type="text/template" id="news-list">
+    <thead><tr><th>Заголовок</th><th>Автор</th><th></th></tr></thead>
+    <tbody></tbody>
+</script>
+
+<script type="text/template" id="news-list-item">
+    <td><%- title %></td>
+    <td><%- author %></td>
+    <td>
+        <a href="#newss/<%- id %>" class="js-show">Открыть</a>
+        <button class="js-delete">Удалить</button>
+    </td>
+</script>
+
+<script type="text/template" id="news-view">
+    <h1><%- title %> : <%- text %></h1>
+    <a href="#newss/<%- id %>/edit" class="js-edit">Редактировать</a>
+    <p>Автор: <%- author %></p>
+</script>
+
+<script type="text/template" id="news-form">
+    <form>
+        Заголовок:<input id="news-title" name="title" type="text" value="<%- title %>"/>
+        Текст:<input id="news-text" name="text" type="text" value="<%- text %>"/>
+        Автор:<input name="author" type="text" value="<%- author %>"/>
+        <button class="js-submit">Сохранить</button>
+    </form>
+</script>
+
+<script src="./assets/js/vendor/jquery.js"></script>
+<script src="./assets/js/vendor/json2.js"></script>
+<script src="./assets/js/vendor/underscore.js"></script>
+<script src="./assets/js/vendor/backbone.js"></script>
+<script src="./assets/js/vendor/backbone.syphon.js"></script>
+<script src="./assets/js/vendor/backbone.marionette.js"></script>
+<script src="./assets/js/vendor/backbone.paginator.js"></script>
+
+<script src="assets/js/app.js"></script>
+<script src="assets/js/news.js"></script>
+<script src="assets/js/news_app.js"></script>
+<script src="assets/js/views.js"></script>
+<script src="assets/js/list/list_view.js"></script>
+<script src="assets/js/list/list_controller.js"></script>
+<script src="assets/js/show/show_view.js"></script>
+<script src="assets/js/show/show_controller.js"></script>
+<script src="assets/js/edit/edit_controller.js"></script>
+<script src="assets/js/new/new_controller.js"></script>
+
+<script type="text/javascript">
+    App.start();
+</script>
+</body>
+</html>
